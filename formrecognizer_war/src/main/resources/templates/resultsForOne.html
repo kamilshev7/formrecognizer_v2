@@ -1,0 +1,31 @@
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-black">
+<header class="w3-container w3-padding-32 w3-center w3-black">
+    <h1 class="w3-jumbo">Form recognizer</h1>
+    <h4>
+        <a th:href="@{/results}">Назад к списку</a>
+    </h4>
+    <div th:object="${recognitionResult}">
+        ID чека: <th th:text="*{id}"></th>
+    </div>
+
+</header>
+
+<div th:object="${recognitionResult}">
+    <br>
+    Название: <th th:text="*{receiptFileName}"></th><br>
+    Продавец: <th th:text="*{merchantName}"></th><br>
+    Итог: <th th:text="*{total}"></th> ₽<br>
+    Дата: <th th:text="*{transactionDate}"></th><br>
+    Время: <th th:text="*{transactionTime}"></th><br>
+    ФН: <th th:text="*{fn}"></th><br>
+    ФД: <th th:text="*{fd}"></th><br>
+    ФП: <th th:text="*{fp}"></th><br>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-black">
+<header class="w3-container w3-padding-32 w3-center w3-black">
+    <h1 class="w3-jumbo">Form recognizer</h1>
+    <h4>
+        <a th:href="@{/}">На главную</a>
+    </h4>
+    <p>Загрузка нового чека</p>
+</header>
+<form class="w3-container w3-padding-32"
+      method="POST"
+      enctype="multipart/form-data"
+      action="/upload"
+      style="margin:auto;width:40%">
+
+    <div class="w3-container" >
+        <input type="file" name="file" />
+    </div>
+    <div class="w3-container">
+
+        <input type="submit" value="Загрузить"/>
+    </div>
+</form>
+</body>
+</html>

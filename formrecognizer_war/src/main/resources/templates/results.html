@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body class="w3-black">
+<header class="w3-container w3-padding-32 w3-center w3-black">
+    <h1 class="w3-jumbo">Form recognizer</h1>
+    <h4>
+        <a th:href="@{/}">На главную</a>
+    </h4>
+    <p>Список чеков</p>
+</header>
+<table align="center" cellpadding="10">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Продавец</th>
+        <th>Дата</th>
+        <th>Итог</th>
+        <th>Подробнее</th>
+        <th>Удалить</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${recognitionResults}">
+        <td th:text="${result.id}">id</td>
+        <td th:text="${result.receiptFileName}">receiptFileName</td>
+        <td th:text="${result.merchantName}">merchantName</td>
+        <td th:text="${result.transactionDate}">transactionDate</td>
+        <td th:text="${#numbers.formatCurrency(result.total)}">total</td>
+        <td>
+            <a th:href="@{/results/{id}(id=${result.id})}">Больше</a>
+        </td>
+        <td>
+            <a th:href="@{/delete/{id}(id=${result.id})}">Х</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
